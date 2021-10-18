@@ -1,103 +1,126 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/compra_tickets.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>DAW - Prueba Práctica 3</title>
 </head>
 <body>
-    <h1>Cine Bosco</h1>
-    <div class="Peli Peli1">
-        <img src="media/venom.jpg" width="200px">
-        <div class="sec1">
-            <h3>Nombre Pelicula 1</h3>
-            <ul>
-                <li>Clasificación: <span>Info</span></li>
-                <li>|</li>
-                <li>Duración de la Pelicula:  <span>Info</span></li>
-            </ul>
-        </div>
-        <div id="sec3">
-            <ul>
-                <li>Formatos de Pelicula: <span>Info</span> </li>
-                <li>|</li>
-                <li>Butacas: <span>Info</span> </li>
-            </ul>
-        </div>
-        <div class="sec2">
-            <h4>Horarios</h4>
-            <ul>
-                <li>Horario 1</li>
-                <li>Horario 2</li>
-            </ul>
-        </div>
-        <input type="checkbox" id="selc1"  onclick="selc1();"><label id="btn1">Seleccionar </label> 
-    </div>
-    <div class="Peli Peli2">
-        <img src="media/venom.jpg" width="200px">
-        <div class="sec1">
-            <h3>Nombre Pelicula 1</h3>
-            <ul>
-                <li>Clasificación: <span>Info</span></li>
-                <li>|</li>
-                <li>Duración de la Pelicula:  <span>Info</span></li>
-            </ul>
-        </div>
-        <div id="sec3">
-            <ul>
-                <li>Formatos de Pelicula: <span >Info</span> </li>
-                <li>|</li>
-                <li>Butacas: <span>Info</span> </li>
-            </ul>
-        </div>
-        <div class="sec2">
-            <h4>Horarios</h4>
-            <ul>
-                <li>Horario 1</li>
-                <li>Horario 2</li>
-            </ul>
-        </div>
-        <input type="checkbox" id="selc2"  onclick="selc2();"><label id="btn2">Seleccionar </label> 
-        
-        <input type="radio" id="h2" name="horario"> <label for="h2">Hola</label>
-    </div>
-    <div class="Peli Peli3">
-        <img src="media/venom.jpg" width="200px">
-        <div class="sec1">
-            <h3>Nombre Pelicula 1</h3>
-            <ul>
-                <li>Clasificación: <span>Info</span></li>
-                <li>|</li>
-                <li>Duración de la Pelicula:  <span>Info</span></li>
-            </ul>
-        </div>
-        <div id="sec3">
-            <ul>
-                <li>Formatos de Pelicula: <span>Info</span> </li>
-                <li>|</li>
-                <li>Butacas: <span>Info</span> </li>
-            </ul>
-        </div>
-        <div class="sec2">
-            <h4>Horarios</h4>
-            <ul>
-                <li>Horario 1</li>
-                <li>Horario 2</li>
-            </ul>
-        </div>
-        <input type="checkbox" id="selc3"  onclick="selc3();"><label id="btn3">Seleccionar </label> 
-        <div id="btn3">
+     <h1>Cine Bosco</h1>
+    <div id="Peliculas"></div>
+    <script type="text/javascript">
+var pelis = `{
+    "Peliculas": {
+        "peli1":{
+            "nombre":"Venom",
+            "imagen":"<img id='img1' src='media/venom.jpg' width='200px'>",
+            "duracion": "2h 13m",
+            "clasificacion":"Acción/Aventura",
+            "butacas":"Normales",
+            "horario":"8:00 AM, 10:00AM"
+        },
+        "peli2":{
+            "nombre":"Black Widow",
+            "imagen":"<img id='img2' src='media/Black.jpg' width='200px'",
+            "duracion": "2h 13m",
+            "clasificacion":"Acción/Aventura",
+            "butacas":"Normales", 
+            "horario":"9:00 AM, 11:00AM"
+        },
+        "peli3":{
+            "nombre":"Luca",
+            "imagen":"<img id='img3' src='media/Luca.jpg' width='200px'",
+            "duracion": "2h 13m",
+            "clasificacion":"Aventura/Familiar",
+            "butacas":"Normales",
+            "horario":"3:00PM, 5:00PM"
 
-        </div>
-    </div>
-    <div id="compra">
+        }
+    }
+}`;
+
+var total = JSON.parse(pelis);
+
+var salida = "<div id='Peli Peli1'>";
+salida +=   total.Peliculas.peli1.imagen;
+salida += " <div id='sec1'><h3>Nombre Pelicula 2: " + total.Peliculas.peli1.nombre + "</h3><br>";
+salida +=    "<ul>";
+salida +=      "<li>Clasificación: " + total.Peliculas.peli1.clasificacion + "  </li>";
+salida +=      " <li>Duración: " + total.Peliculas.peli1.duracion + "</li>";
+salida +=    "</ul>";
+salida +=    "</div>";
+salida += " <div id='sec3'>";
+salida +=    "<ul>";
+salida +=      "<li>Butacas: " + total.Peliculas.peli1.butacas + "</li>";
+salida +=      "<li>|</li>";
+salida +=      " <li>Formato de la pelicula 2D </li>";
+salida +=    "</ul>";
+salida +=      "<div id='sec2'>";
+salida +=        "<ul>";
+salida +=          "<li>Horarios: " + total.Peliculas.peli1.horario + "</li>";
+salida +=        "</ul>";
+salida +=        "<br><input type='checkbox' id='selc1' onclick='selc1()';><label id='btn1'>Seleccionar </label>";
+salida +=      "</div>";
+salida +=    "</div>";
+
+
+salida += "<div id='Peli Peli2'>";
+salida +=  total.Peliculas.peli2.imagen;
+salida += " <div id='sec1'><h3>Nombre Pelicula 2: " + total.Peliculas.peli2.nombre + "</h3><br>";
+salida +=    "<ul>";
+salida +=      "<li>Clasificación: " + total.Peliculas.peli2.clasificacion + " </li>";
+salida +=      " <li>Duración: " + total.Peliculas.peli2.duracion + "</li>";
+salida +=    "</ul>";
+salida +=    "</div>";
+salida += " <div id='sec3'>";
+salida +=    "<ul>";
+salida +=      "<li>Butacas: " + total.Peliculas.peli2.butacas + "</li>";
+salida +=      "<li>|</li>";
+salida +=      " <li>Formato de la pelicula 2D </li>";
+salida +=    "</ul>";
+salida +=      "<div id='sec2'>";
+salida +=        "<ul>";
+salida +=          "<li>Horarios: " + total.Peliculas.peli2.horario + "</li>";
+salida +=        "</ul>";
+salida +=        "<br><input type='checkbox' id='selc2'  onclick='selc2()'><label id='btn2'>Seleccionar </label";
+salida +=      "</div>";
+salida +=    "</div>";
+
+salida += "<div id='Peli Peli3'>";
+salida += total.Peliculas.peli3.imagen;
+salida +=   "<div id='sec1'><h3>Nombre Pelicula 2: " + total.Peliculas.peli3.nombre + "</h3><br>";
+salida +=     "<ul>"
+salida +=       "<li>Clasificación: " + total.Peliculas.peli3.clasificacion + "</li> ";
+salida +=       "<li>Duración: " + total.Peliculas.peli3.duracion + "</li>";
+salida +=     "</ul>";
+salida +=   "</div>";
+salida +=   "<div id='sec3'>";
+salida +=     "<ul>";
+salida +=       "<li>Butacas: " + total.Peliculas.peli3.butacas + "</li>";
+salida +=       "<li>|</li>";
+salida +=       " <li>Formato de la pelicula 2D </li>";
+salida +=     "</ul>";
+salida +=    "<div id='sec2'>";
+salida +=        "<ul>";
+salida +=          "<li>Horarios: " + total.Peliculas.peli3.horario + "</li>";
+salida +=        "</ul>";
+salida +=        "<br><input type='checkbox' id='selc3'  onclick='selc3()'><label id='btn3'>Seleccionar </label> <div id='btn3'> </div>";
+salida +=    "</div>";
+salida +=  "</div>";
+
+$(document).ready();
+    $("#Peliculas").html(salida);  
+
+</script>
+   <div id="compra">
         
     </div>
     <div id="detalles">
 
     </div>
-    <script src="js/compra_tickets.js"></script>
 </body>
 </html>

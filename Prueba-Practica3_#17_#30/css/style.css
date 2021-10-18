@@ -26,6 +26,7 @@ span{
 }
 img{
     padding-left: 90px;
+    margin-left: 20%;
 }
 .Peli2{
     border-right: 1px solid black;
@@ -47,7 +48,4 @@ img{
 input{
     margin-top: 2vw;
     cursor: pointer;
-}
-p{
-    font-weight: bold;
 }

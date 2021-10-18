@@ -8,7 +8,7 @@ h1{
     color: white;
 }
 h3{
-    margin-top: -16%;
+    margin-top: -20%;
     margin-left: 16%;
 
 }
@@ -57,4 +57,5 @@ input{
     margin-top: 2vw;
     cursor: pointer;
     margin-left: 16%;
+    margin-bottom: 5%;
 }

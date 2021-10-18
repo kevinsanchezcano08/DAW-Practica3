@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap');
+*{
+font-family: "Inter";
+}
+h1{
+    text-align: center;
+    background-color: #09859E;
+    color: white;
+}
+ul {
+    display: inline;
+}
+li{
+    display: inline-flex;
+    font-weight: bold;
+}
+span{
+    font-weight: 200;
+    padding-left: 5px;
+}
+.Peli{
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-right: 66vw;
+}
+img{
+    padding-left: 90px;
+}
+.Peli2{
+    border-right: 1px solid black;
+    margin-top: 5px;
+    margin-left: 34vw;
+    margin-right: 34vw;
+    margin-top: -36.5vw;
+}
+.Peli1{
+    margin-left: 2vw;
+    border-right: 1px solid black;
+}
+.Peli3{
+    margin-top: 5px;
+    margin-left: 66vw;
+    margin-right: 2vw;
+    margin-top: -36.5vw;
+}
+input{
+    margin-top: 2vw;
+    cursor: pointer;
+}
+p{
+    font-weight: bold;
+}

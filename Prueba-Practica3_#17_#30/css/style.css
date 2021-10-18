@@ -7,8 +7,14 @@ h1{
     background-color: #09859E;
     color: white;
 }
+h3{
+    margin-top: -15%;
+    margin-left: 16%;
+}
+
 ul {
     display: inline;
+    margin-left: 12%;
 }
 li{
     display: inline-flex;
@@ -25,22 +31,21 @@ span{
     margin-right: 66vw;
 }
 img{
-    padding-left: 90px;
-    margin-left: 20%;
+   
 }
 .Peli2{
     border-right: 1px solid black;
     margin-top: 5px;
-    margin-left: 34vw;
+    margin-left: 50vw;
     margin-right: 34vw;
     margin-top: -36.5vw;
 }
 .Peli1{
-    margin-left: 2vw;
+    margin-left: 10%;
     border-right: 1px solid black;
 }
 .Peli3{
-    margin-top: 5px;
+    margin-top: 20px;
     margin-left: 66vw;
     margin-right: 2vw;
     margin-top: -36.5vw;
@@ -48,7 +53,5 @@ img{
 input{
     margin-top: 2vw;
     cursor: pointer;
-}
-#canT{
-    width: 150px;
+    margin-left: 16%;
 }
